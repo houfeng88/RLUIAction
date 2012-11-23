@@ -1,1 +1,2 @@
 test
+This project as a way of teaching myself cocos2d,just for studying
