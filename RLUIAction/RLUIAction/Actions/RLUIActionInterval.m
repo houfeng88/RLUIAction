@@ -207,16 +207,41 @@
     return copy;
 }
 
--(void)startWithTarget:(UIView*)target{
+-(void)startWithTarget:(RLView*)target{
     [super startWithTarget:target];
-    startScaleX_ = [target_ getScaleX];
-    startScaleY_ = [target_ getScaleY];
+    startScaleX_ = [target_ scaleX];
+    startScaleY_ = [target_ scaleY];
     deltaX_ = endScaleX_ - startScaleX_;
     deltaY_ = endScaleY_ - startScaleY_;
 }
 -(void)update:(rlTime)time
 {
     [target_ setScaleX:(startScaleX_ +deltaX_ * time) Y:startScaleY_ +deltaY_ *time];
+    //[target_ setScaleX:startScaleX_+deltaX_*time];
+    //[target_ setScaleY:startScaleY_+deltaY_*time];
 }
 @end
+
+@implementation RLUIScaleBy
+-(void)startWithTarget:(RLView *)target
+{
+    [super startWithTarget:target];
+    deltaX_ = startScaleX_ * endScaleX_-startScaleX_;
+    deltaY_ = startScaleY_ * endScaleY_-startScaleY_;
+}
+-(RLUIActionInterval *)reverse
+{
+    return  [[self class] actionWithDuration:duration_ scaleX:1/endScaleX_ scaleY:1/endScaleY_];
+}
+@end
+
+
+
+
+
+
+
+
+
+
 

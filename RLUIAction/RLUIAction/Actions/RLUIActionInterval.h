@@ -5,7 +5,7 @@
 //  Created by houfeng on 12-11-22.
 //  Copyright (c) 2012年 houfeng. All rights reserved.
 //
-
+#import "RLView.h"
 #import "RLUIAction.h"
 
 @interface RLUIActionInterval : RLUIFiniteTimeAction
@@ -69,6 +69,10 @@
 -(id)initWithDuration:(rlTime)duration scale:(float)s;
 +(id) actionWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy;
 -(id) initWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy;
+@end
+
+@interface RLUIScaleBy:RLUIScaleTo<NSCopying>
+-(void)startWithTarget:(UIView *)target;
 @end
 
 

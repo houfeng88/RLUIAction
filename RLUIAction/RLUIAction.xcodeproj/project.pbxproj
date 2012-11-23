@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0584B0165FBB2B00016E6A /* RLTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0584AE165FBB2B00016E6A /* RLTestController.m */; };
+		CF0584B1165FBB2B00016E6A /* RLTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0584AF165FBB2B00016E6A /* RLTestController.xib */; };
+		CF0584B3165FBB5E00016E6A /* RLTestItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0584B2165FBB5E00016E6A /* RLTestItems.plist */; };
+		CF0584B6165FBC9A00016E6A /* RLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0584B5165FBC9A00016E6A /* RLTest.m */; };
+		CF0584B9165FBEF000016E6A /* RLUIActionIntervalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0584B8165FBEF000016E6A /* RLUIActionIntervalTest.m */; };
 		CF4B23A0165F4343004F0E5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4B239F165F4343004F0E5B /* UIKit.framework */; };
 		CF4B23A2165F4343004F0E5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4B23A1165F4343004F0E5B /* Foundation.framework */; };
 		CF4B23A4165F4343004F0E5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4B23A3165F4343004F0E5B /* CoreGraphics.framework */; };
@@ -27,6 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF0584AD165FBB2B00016E6A /* RLTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLTestController.h; sourceTree = "<group>"; };
+		CF0584AE165FBB2B00016E6A /* RLTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLTestController.m; sourceTree = "<group>"; };
+		CF0584AF165FBB2B00016E6A /* RLTestController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RLTestController.xib; sourceTree = "<group>"; };
+		CF0584B2165FBB5E00016E6A /* RLTestItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RLTestItems.plist; sourceTree = "<group>"; };
+		CF0584B4165FBC9A00016E6A /* RLTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLTest.h; sourceTree = "<group>"; };
+		CF0584B5165FBC9A00016E6A /* RLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLTest.m; sourceTree = "<group>"; };
+		CF0584B7165FBEF000016E6A /* RLUIActionIntervalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLUIActionIntervalTest.h; sourceTree = "<group>"; };
+		CF0584B8165FBEF000016E6A /* RLUIActionIntervalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLUIActionIntervalTest.m; sourceTree = "<group>"; };
 		CF4B239B165F4343004F0E5B /* RLUIAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RLUIAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4B239F165F4343004F0E5B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF4B23A1165F4343004F0E5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF0584AB165FBAE700016E6A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				CF0584B2165FBB5E00016E6A /* RLTestItems.plist */,
+				CF0584B4165FBC9A00016E6A /* RLTest.h */,
+				CF0584B5165FBC9A00016E6A /* RLTest.m */,
+				CF0584AD165FBB2B00016E6A /* RLTestController.h */,
+				CF0584AE165FBB2B00016E6A /* RLTestController.m */,
+				CF0584B7165FBEF000016E6A /* RLUIActionIntervalTest.h */,
+				CF0584B8165FBEF000016E6A /* RLUIActionIntervalTest.m */,
+				CF0584AF165FBB2B00016E6A /* RLTestController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		CF4B2390165F4343004F0E5B = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +135,7 @@
 				CF4B23BC165F4374004F0E5B /* Actions */,
 				CF4B23AE165F4343004F0E5B /* AppDelegate.h */,
 				CF4B23AF165F4343004F0E5B /* AppDelegate.m */,
+				CF0584AB165FBAE700016E6A /* Test */,
 				CF4B23D2165F44FD004F0E5B /* RLActionViewController.h */,
 				CF4B23D3165F44FD004F0E5B /* RLActionViewController.m */,
 				CF4B23A6165F4343004F0E5B /* Supporting Files */,
@@ -203,6 +232,8 @@
 				CF4B23B2165F4343004F0E5B /* Default.png in Resources */,
 				CF4B23B4165F4343004F0E5B /* Default@2x.png in Resources */,
 				CF4B23B6165F4343004F0E5B /* Default-568h@2x.png in Resources */,
+				CF0584B1165FBB2B00016E6A /* RLTestController.xib in Resources */,
+				CF0584B3165FBB5E00016E6A /* RLTestItems.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +253,9 @@
 				CF4B23CD165F43C5004F0E5B /* RLUIActionInstant.m in Sources */,
 				CF4B23CE165F43C5004F0E5B /* RLUIActionManager.m in Sources */,
 				CF4B23D4165F44FD004F0E5B /* RLActionViewController.m in Sources */,
+				CF0584B0165FBB2B00016E6A /* RLTestController.m in Sources */,
+				CF0584B6165FBC9A00016E6A /* RLTest.m in Sources */,
+				CF0584B9165FBEF000016E6A /* RLUIActionIntervalTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +366,7 @@
 				CF4B23BB165F4343004F0E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

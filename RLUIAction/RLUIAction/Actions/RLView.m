@@ -16,7 +16,7 @@
 }
 @end
 
-@implementation UIView(RLView)
+@implementation UIView(RLViewPublic)
 -(void)setX:(float)x Y:(float)y
 {
     [self setFrame:CGRectMake(x, y, self.frame.size.width, self.frame.size.height)];
@@ -83,8 +83,48 @@
 }
 @end
 
-@implementation RLActionView
+@implementation RLView
+@synthesize rotationX=rotationX_,rotationY=rotationY_;
+@synthesize scaleX=scaleX_,scaleY=scaleY_;
+@synthesize position=position_;
 
+-(id)init{
+    self=[super init];
+    if (self) {
+        
+    }
+    return self;
+}
+-(id)initWithFrame:(CGRect)frame
+{
+    self=[super initWithFrame:frame];
+    if (self) {
+        scaleX_=1.0f;
+        scaleY_=1.0f;
+    }
+    return self;
+}
+-(void)setPosition:(CGPoint)position
+{
+    position_=position;
+    self.center=position;
+}
+-(void)setScaleX:(float)scaleX
+{
+    scaleX_=scaleX;
+    self.transform =CGAffineTransformMakeScale(scaleX_, scaleY_);
+}
+-(void)setScaleY:(float)scaleY
+{
+    scaleY_=scaleY;
+    self.transform = CGAffineTransformMakeScale(scaleX_, scaleY_);
+}
+-(void)setScaleX:(float)x Y:(float)y
+{
+    scaleX_=x;
+    scaleY_=y;
+    self.transform =  CGAffineTransformMakeScale(x, y);
+}
 @end
 
 

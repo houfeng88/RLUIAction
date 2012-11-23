@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>RLUIActionIntervalTest</string>
+		<key>classname</key>
+		<string>RLUIActionIntervalTest</string>
+		<key>testitems</key>
+		<array>
+			<dict>
+				<key>functitle</key>
+				<string>testMoveTo</string>
+				<key>funcname</key>
+				<string>testMoveTo</string>
+			</dict>
+			<dict>
+				<key>functitle</key>
+				<string>testMoveBy</string>
+				<key>funcname</key>
+				<string>testMoveBy</string>
+			</dict>
+			<dict>
+				<key>functitle</key>
+				<string>testJumpTo</string>
+				<key>funcname</key>
+				<string>testJumpTo</string>
+			</dict>
+			<dict>
+				<key>functitle</key>
+				<string>testJumpBy</string>
+				<key>funcname</key>
+				<string>testJumpBy</string>
+			</dict>
+			<dict>
+				<key>functitle</key>
+				<string>testScaleTo</string>
+				<key>funcname</key>
+				<string>testScaleTo</string>
+			</dict>
+			<dict>
+				<key>functitle</key>
+				<string>testScaleBy</string>
+				<key>funcname</key>
+				<string>testScaleBy</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>RLTestTitle</string>
+		<key>classname</key>
+		<string>RLTest</string>
+		<key>testitems</key>
+		<array>
+			<dict>
+				<key>functitle</key>
+				<string>testtitle</string>
+				<key>funcname</key>
+				<string>test</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

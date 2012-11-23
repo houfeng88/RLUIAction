@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RLTestController.h"
 @implementation AppDelegate
 
 - (void)dealloc
@@ -20,9 +21,16 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    RLActionViewController *test = [[RLActionViewController alloc] init];
-    self.window.rootViewController=test;
-    [test release];
+//    RLActionViewController *test = [[RLActionViewController alloc] init];
+//    self.window.rootViewController=test;
+//    [test release];
+    
+    
+    RLTestController *testCtr =[[RLTestController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *nvc =[[UINavigationController alloc] initWithRootViewController:testCtr];
+    [testCtr release];
+    self.window.rootViewController =nvc;
+    [nvc release];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -32,7 +32,7 @@
     self.view=aView;
     [aView release];
     
-    UIView *testView =[[UIView alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
+    RLView *testView =[[RLView alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
     testView.backgroundColor=[UIColor redColor];
     [self.view addSubview:testView];
      m_testView=testView;
@@ -87,9 +87,9 @@
         RLUIMoveBy *moveBy = [RLUIMoveBy actionWithDuration:3.5 position:CGPointMake(0, 100)];
         RLUIJumpBy *jumpBy = [RLUIJumpBy actionWithFuration:4.0 position:rlp(0, 350) height:100 jumps:3];
         RLUIJumpTo *jumpTo = [RLUIJumpTo actionWithFuration:14.0 position:rlp(1000, 400) height:100 jumps:8];
-        
         RLUIScaleTo *scaleTo =[RLUIScaleTo actionWithDuration:1.0 scale:0.5f];
-        [m_testView runAction:scaleTo];
+        RLUIScaleBy *scaleBy =[RLUIScaleBy actionWithDuration:2.0 scale:1.5];
+        [m_testView runAction:scaleBy];
     }
     
 }
