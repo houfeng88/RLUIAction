@@ -48,12 +48,10 @@
 {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    //  KEY: need to translate the context down to the current visible portion of the tablview
     CGContextTranslateCTM(ctx, 0, deltaY);
     [self.layer renderInContext:ctx];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return screenshot;
 }
 
@@ -66,6 +64,18 @@
 {
     self.center=pos;
 }
+-(float)getScaleX
+{
+    return 1;
+}
+-(float)getScaleY
+{
+    return 1;
+}
+-(void)setScaleX:(float)x Y:(float)y
+{   
+    self.transform =  CGAffineTransformMakeScale(x, y);
+}
 -(RLUIAction *)runAction:(RLUIAction *)action
 {
     [[RLUIActionManager shareManager] addAction:action target:self paused:YES];
@@ -73,6 +83,9 @@
 }
 @end
 
+@implementation RLActionView
+
+@end
 
 
 

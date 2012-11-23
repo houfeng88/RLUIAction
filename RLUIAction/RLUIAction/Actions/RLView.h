@@ -25,9 +25,14 @@
 - (UIImage *)screenshot;
 -(CGPoint)getPosition;
 -(void)setPosition:(CGPoint)pos;
+-(float)getScaleX;
+-(float)getScaleY;
+-(void)setScaleX:(float)x Y:(float)y;
 -(RLUIAction  *)runAction:(RLUIAction *)action;
 @end
 
+@interface RLActionView:UIView
+@end
 
 
 

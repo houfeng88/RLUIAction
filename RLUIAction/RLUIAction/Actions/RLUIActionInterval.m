@@ -172,3 +172,51 @@
 }
 @end
 
+
+@implementation RLUIScaleTo
+
++(id)actionWithDuration:(rlTime)duration scale:(float)s
+{
+    return [[[self alloc] initWithDuration:duration scale:s] autorelease];
+}
+
+-(id)initWithDuration:(rlTime)duration scale:(float)s
+{
+    if(self =[super initWithDuration:duration]){
+        endScaleX_=s;
+        endScaleY_=s;
+    }
+    
+    return self;
+}
++(id) actionWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy
+{
+    return [[[self alloc] initWithDuration:duration scaleX:sx scaleY:sy] autorelease];
+}
+-(id) initWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy
+{
+    if(self = [super initWithDuration:duration]){
+        endScaleX_ = sx;
+        endScaleY_ = sy;
+    }
+    return self;
+}
+-(id)copyWithZone:(NSZone *)zone
+{
+    RLUIAction *copy =[[[self class] allocWithZone:zone] initWithDuration:[self duration] scaleX:endScaleX_ scaleY:endScaleY_ ];
+    return copy;
+}
+
+-(void)startWithTarget:(UIView*)target{
+    [super startWithTarget:target];
+    startScaleX_ = [target_ getScaleX];
+    startScaleY_ = [target_ getScaleY];
+    deltaX_ = endScaleX_ - startScaleX_;
+    deltaY_ = endScaleY_ - startScaleY_;
+}
+-(void)update:(rlTime)time
+{
+    [target_ setScaleX:(startScaleX_ +deltaX_ * time) Y:startScaleY_ +deltaY_ *time];
+}
+@end
+

@@ -88,7 +88,8 @@
         RLUIJumpBy *jumpBy = [RLUIJumpBy actionWithFuration:4.0 position:rlp(0, 350) height:100 jumps:3];
         RLUIJumpTo *jumpTo = [RLUIJumpTo actionWithFuration:14.0 position:rlp(1000, 400) height:100 jumps:8];
         
-        [m_testView runAction:jumpTo];
+        RLUIScaleTo *scaleTo =[RLUIScaleTo actionWithDuration:1.0 scale:0.5f];
+        [m_testView runAction:scaleTo];
     }
     
 }

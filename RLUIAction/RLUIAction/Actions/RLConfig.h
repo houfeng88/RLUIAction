@@ -22,5 +22,8 @@ static inline CGPoint rlpAdd(const CGPoint v1,CGPoint v2)
     return rlp(v1.x+v2.x, v1.y+v2.y);
 }
 
+#define RL_DEGREES_TO_RADIANS(__ANGLE__) ((__ANGLE__) * 0.01745329252f)
+#define RL_RADIANS_TO_DEGRESS(__ANGLE__) ((__ANGLE__) * 57.29577951f)
+
 
 #endif

@@ -54,5 +54,22 @@
 -(void)startWithTarget:(UIView *)target;
 @end
 
+@interface RLUIScaleTo:RLUIActionInterval<NSCopying>
+{
+    float scaleX_;
+    float scaleY_;
+    float startScaleX_;
+    float endScaleX_;
+    float startScaleY_;
+    float endScaleY_;
+    float deltaX_;
+    float deltaY_;
+}
++(id)actionWithDuration:(rlTime)duration scale:(float)s;
+-(id)initWithDuration:(rlTime)duration scale:(float)s;
++(id) actionWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy;
+-(id) initWithDuration: (rlTime)duration scaleX:(float) sx scaleY:(float)sy;
+@end
+
 
 
