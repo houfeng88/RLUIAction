@@ -9,6 +9,36 @@
 #import "RLUIActionManager.h"
 
 
+@implementation RLUIActionElement
+-(id)init{
+    self =[super init];
+    if(self)
+    {
+        m_actions=nil;
+    }
+    return self;
+}
+-(void)addAction:(RLUIAction *)action
+{
+    if(m_actions == nil){
+        m_actions =[[NSMutableArray alloc] initWithCapacity:5];
+    }
+    [m_actions addObject:action];
+}
+-(void)runActions:(rlTime)t
+{
+    if(m_actions){
+        for(RLUIAction * action in m_actions){
+            if(![action isDone])
+            {
+                 [action step:t];
+            }
+           
+        }
+    }
+    
+}
+@end
 
 
 @interface RLUIActionManager()
@@ -34,6 +64,7 @@
         [m_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
         m_displayLink.frameInterval=1;
         m_timestamp=CACurrentMediaTime();
+        m_targets=[[NSMutableDictionary alloc] initWithCapacity:10];
     }
     return  self;
 }
@@ -46,21 +77,24 @@
 }
 -(void)addAction:(RLUIAction *)action target:(id)target paused:(BOOL)paused;
 {
-    if(self.m_curAction)
-    {
-        self.m_curAction=nil;
+    RLUIActionElement *element =nil;
+    
+    element = [m_targets objectForKey:NSStringFromClass([target class]) ];
+    if(element == nil){
+        element = [[RLUIActionElement alloc] init] ;
+        [m_targets setObject:element forKey:NSStringFromClass([target class])];
     }
+    [element addAction:action];
     [action startWithTarget:target];
-    self.m_curAction=action;
     m_timestamp=CACurrentMediaTime();
 }
 -(void)runActionLoop:(CADisplayLink *)displayLink
 {
     if(displayLink){
         float elapsedTime = displayLink.timestamp-m_timestamp;
-        if(self.m_curAction && ![self.m_curAction isDone])
+        for(RLUIActionElement *element  in [m_targets allValues])
         {
-            [self.m_curAction step:elapsedTime];
+            [element runActions:elapsedTime];
         }
         m_timestamp=displayLink.timestamp;
         

@@ -57,12 +57,12 @@
     [aView release];
     
     
-//    RLView *aView1 =[[RLView alloc] initWithFrame:CGRectMake(200, 400, 30, 30)];
-//    aView1.backgroundColor=[UIColor redColor];
-//    RLUIScaleTo *scaleTo1 = [RLUIScaleTo actionWithDuration:1.0f scaleX:2 scaleY:4];
-//    [aView1 runAction:scaleTo1];
-//    [self addTestView:aView1];
-//    [aView1 release];
+    RLView *aView1 =[[RLView alloc] initWithFrame:CGRectMake(200, 400, 30, 30)];
+    aView1.backgroundColor=[UIColor redColor];
+    RLUIScaleTo *scaleTo1 = [RLUIScaleTo actionWithDuration:1.0f scaleX:2 scaleY:4];
+    [aView1 runAction:scaleTo1];
+    [self addTestView:aView1];
+    [aView1 release];
 }
 -(void)testScaleBy
 {
